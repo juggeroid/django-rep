@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+	<head>
+	  <meta charset="UTF-8">
+	  <title>TodoApp - Django</title>
+	  {% load static %}
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	</head>
+
+	<body>
+		<div django-app="TaskManager">
+			<div class="container">
+				<div class="content">
+					<h1>Login</h1>
+					<br></br>
+                    <div class="modal-body">
+					<form method="post">
+						{% csrf_token %}
+                        <div class="form-group">
+                            <i class="fa fa-user fa-fw"></i><label for="username">Username:</label>
+						<input name="username" class="form-control" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-key fa-fw"></i><label for="password">Password:</label>
+						<input type="password" class="form-control" name="password" placeholder="Password">
+                        </div>
+						<button class="taskLogin" name="Login" type="submit"><i class="fa fa-unlock icon"></i>Login</button>
+					</form>
+                    </div>
+				</div>
+				<p class="tagline"><a href="{% url 'signup' %}">sign up</a></p>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</body>
+</html>
